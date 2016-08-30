@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hi;
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "HiProto";
+option objc_class_prefix = "HI";
+
+message MyStringValue {
+    string value = 1;
+}
+
+service Hi {
+    rpc Hello (MyStringValue) returns (MyStringValue) {
+    }
+}
